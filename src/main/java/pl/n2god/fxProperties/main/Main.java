@@ -1,26 +1,38 @@
 package pl.n2god.fxProperties.main;
 
 import javafx.application.Application;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
+import java.util.Scanner;
+
 /**
  * @author n2god on 12/08/2019
  * @project fxproperties
  */
-public class Main extends Application {
+public class Main {
     public static void main(String[] args) {
-        launch(args);
+        Scanner sc = new Scanner(System.in);
+
+        IntegerProperty first = new SimpleIntegerProperty();
+        IntegerProperty second = new SimpleIntegerProperty();
+        second.bind(first);
+        second.addListener(((observableValue, oldValue, newValue) -> System.out.println("Zmiana w second: " + newValue)));
+
+        System.out.println("Podaj pierwszą liczbę całkowitą");
+        first.set(sc.nextInt());
+        sc.nextLine();
+
+        System.out.println("Podaj drugą liczbę całkowitą");
+        first.set(sc.nextInt());
+        sc.nextLine();
+
+        sc.close();
     }
 
-    @Override
-    public void start(Stage stage) throws Exception {
-        Pane mainPane = FXMLLoader.load(getClass().getResource("/fxml/volumePane.fxml"));
-        Scene scene = new Scene(mainPane);
-        stage.setScene(scene);
-        stage.setTitle("PropertiesExample");
-        stage.show();
-    }
+
 }
