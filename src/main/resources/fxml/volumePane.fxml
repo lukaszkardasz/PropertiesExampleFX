@@ -11,12 +11,12 @@
       <Slider fx:id="volumeSlider" showTickLabels="true" snapToTicks="true" />
       <HBox>
          <children>
-            <Label fx:id="volumeLevelLabel" text="Głośność:">
+            <Label text="Głośność:">
                <HBox.margin>
                   <Insets right="5.0" />
                </HBox.margin>
             </Label>
-            <Label text="0" />
+            <Label fx:id="volumeLevelLabel" text="0" />
          </children>
       </HBox>
    </children>

@@ -1,7 +1,4 @@
-/**
- * @project fxproperties
- * @author n2god on 12/08/2019
- */module fxproperties {
+module fxProperties {
     requires javafx.graphics;
     requires javafx.controls;
     requires javafx.fxml;
